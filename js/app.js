@@ -1,21 +1,35 @@
+var begin = 0;
+var blueButton = 0;
+var greenButton = 0;
+var redButton = 0;
+var yellowButton = 0;
+var score = 0;
+var goal = 0;
+
+
+
 function startGame() {
+    begin = 0;
+    blueButton = 0;
+    greenButton = 0;
+    redButton = 0;
+    yellowButton = 0;
+    score = 0;
+    goal = 0;
+
     document.getElementById("startB").innerHTML = "Restart";
+    document.getElementById("currentScore").innerHTML = "0";
     targetGoal();
     randomNumber();
 }
 
 function targetGoal() {
-    var x = Math.floor((Math.random() * (100-25)) + 25);
-    document.getElementById("goal").innerHTML = x;
+    goal = Math.floor((Math.random() * (100-25)) + 25);
+    document.getElementById("goal").innerHTML = goal;
+
 }
 
 function randomNumber() {
-    var begin = 0;
-    var blueButton = 0;
-    var greenButton = 0;
-    var redButton = 0;
-    var yellowButton = 0;
-
     while (blueButton == begin || blueButton == greenButton || blueButton == redButton || blueButton == yellowButton) {
         blueButton = Math.floor((Math.random() * 10));
         document.getElementById("blueB").innerHTML = blueButton;
@@ -35,11 +49,64 @@ function randomNumber() {
         yellowButton = Math.floor((Math.random() * 10));
         document.getElementById("yellowB").innerHTML = yellowButton;
     }
-    console.log(yellowButton);
 
+    console.log(blueButton, greenButton, redButton, yellowButton);
+    console.log(score, goal);
 }
 
-randomNumber();
+function blueAdd() {
+    score = blueButton + score;
+    document.getElementById("currentScore").innerHTML = score;
+    console.log(score);
+    bigF();
+    bigW();
+}
+
+function greenAdd() {
+    score = greenButton + score;
+    document.getElementById("currentScore").innerHTML = score;
+    console.log(score);
+    bigF();
+    bigW();
+}
+
+function redAdd() {
+    score = redButton + score;
+    document.getElementById("currentScore").innerHTML = score;
+    console.log(score);
+    bigF();
+    bigW();
+}
+
+function yellowAdd() {
+    score = yellowButton + score;
+    document.getElementById("currentScore").innerHTML = score;
+    console.log(score);
+    bigF();
+    bigW();
+}
+
+function bigF() {
+    if (score > goal) {
+        window.alert("Loser");
+    }
+}
+
+function bigW() {
+    if (score === goal) {
+        window.alert("Winner");
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 // function blueButton() {
 //     var x = Math.floor((Math.random() * 10) + 1);
