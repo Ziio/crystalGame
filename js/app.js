@@ -32,22 +32,18 @@ function targetGoal() {
 function randomNumber() {
     while (blueButton == begin || blueButton == greenButton || blueButton == redButton || blueButton == yellowButton) {
         blueButton = Math.floor((Math.random() * 10));
-        document.getElementById("blueB").innerHTML = blueButton;
     }
 
     while (greenButton == begin || greenButton == blueButton || greenButton == redButton || greenButton == yellowButton) {
         greenButton = Math.floor((Math.random() * 10));
-        document.getElementById("greenB").innerHTML = greenButton;
     }
 
     while (redButton == begin || redButton == blueButton || redButton == greenButton || redButton == yellowButton) {
         redButton = Math.floor((Math.random() * 10));
-        document.getElementById("redB").innerHTML = redButton;
     }
 
     while (yellowButton == begin || yellowButton == blueButton || yellowButton == greenButton || yellowButton == redButton) {
         yellowButton = Math.floor((Math.random() * 10));
-        document.getElementById("yellowB").innerHTML = yellowButton;
     }
 
     console.log(blueButton, greenButton, redButton, yellowButton);
@@ -88,13 +84,13 @@ function yellowAdd() {
 
 function bigF() {
     if (score > goal) {
-        window.alert("Loser");
+        document.getElementById("currentScore").innerHTML = "Loser!";
     }
 }
 
 function bigW() {
     if (score === goal) {
-        window.alert("Winner");
+        document.getElementById("currentScore").innerHTML = "Winner!";
     }
 }
 
