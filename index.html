@@ -7,23 +7,23 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <button onclick="startGame()" type="button" id="startB" class="btn btn-light">Start Game</button>
+                <button type="button" class="btn btn-secondary col-sm-4"><h1 id="goal">0</h1></button>
+                <button onclick="startGame()" type="button" class="btn btn-light col-sm-4"><h1 id="startB">Start Game</h1></button>
+                <button type="button" class="btn btn-info col-sm-4"><h1 id="clickCounter">0</h1></button>
             </div>
+
             <div class="row">
-                <button type="button" id="goal" class="btn btn-secondary">0</button>
-            </div>
-            <div class="row">
-                <button type="button" id="currentScore" class="btn btn-dark">0</button>
+                <button type="button" class="btn btn-dark col-sm-12"><h1 id="currentScore">0</h1></button>
             </div>
 
 
             <div class="row">
-                <button onclick="blueAdd()" type="button" id="blueB" class="btn btn-primary col-sm-3">+</button>
-                <button onclick="greenAdd()" type="button" id="greenB" class="btn btn-success col-sm-3">+</button>
-                <button onclick="redAdd()" type="button" id="redB" class="btn btn-danger col-sm-3">+</button>
-                <button onclick="yellowAdd()" type="button" id="yellowB" class="btn btn-warning col-sm-3">+</button>
+                <button onclick="buttonAdd.blueAdd()" type="button" id="blueB" class="btn btn-primary col-3">+</button>
+                <button onclick="buttonAdd.greenAdd()" type="button" id="greenB" class="btn btn-success col-3">+</button>
+                <button onclick="buttonAdd.redAdd()" type="button" id="redB" class="btn btn-danger col-3">+</button>
+                <button onclick="buttonAdd.yellowAdd()" type="button" id="yellowB" class="btn btn-warning col-3">+</button>
             </div>
         </div>
 

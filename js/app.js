@@ -5,6 +5,7 @@ var redButton = 0;
 var yellowButton = 0;
 var score = 0;
 var goal = 0;
+var counter = 0;
 
 
 
@@ -16,9 +17,11 @@ function startGame() {
     yellowButton = 0;
     score = 0;
     goal = 0;
+    counter = 1;
 
     document.getElementById("startB").innerHTML = "Restart";
     document.getElementById("currentScore").innerHTML = "0";
+    document.getElementById("clickCounter").innerHTML = "0";
     targetGoal();
     randomNumber();
 }
@@ -47,40 +50,55 @@ function randomNumber() {
     }
 
     console.log(blueButton, greenButton, redButton, yellowButton);
-    console.log(score, goal);
+    console.log(score, goal, counter);
 }
 
-function blueAdd() {
-    score = blueButton + score;
-    document.getElementById("currentScore").innerHTML = score;
-    console.log(score);
-    bigF();
-    bigW();
+
+
+var buttonAdd = {
+
+    blueAdd: function() {
+        score = blueButton + score;
+        document.getElementById("currentScore").innerHTML = score;
+        document.getElementById("clickCounter").innerHTML = counter;
+        console.log(score, counter);
+        counter ++;
+        bigF();
+        bigW();
+    },
+
+    greenAdd: function() {
+        score = greenButton + score;
+        document.getElementById("currentScore").innerHTML = score;
+        document.getElementById("clickCounter").innerHTML = counter;
+        console.log(score);
+        counter ++;
+        bigF();
+        bigW();
+    },
+
+    redAdd: function() {
+        score = redButton + score;
+        document.getElementById("currentScore").innerHTML = score;
+        document.getElementById("clickCounter").innerHTML = counter;
+        console.log(score);
+        counter ++;
+        bigF();
+        bigW();
+    },
+
+    yellowAdd: function() {
+        score = yellowButton + score;
+        document.getElementById("currentScore").innerHTML = score;
+        document.getElementById("clickCounter").innerHTML = counter;
+        console.log(score);
+        counter ++;
+        bigF();
+        bigW();
+    }
+
 }
 
-function greenAdd() {
-    score = greenButton + score;
-    document.getElementById("currentScore").innerHTML = score;
-    console.log(score);
-    bigF();
-    bigW();
-}
-
-function redAdd() {
-    score = redButton + score;
-    document.getElementById("currentScore").innerHTML = score;
-    console.log(score);
-    bigF();
-    bigW();
-}
-
-function yellowAdd() {
-    score = yellowButton + score;
-    document.getElementById("currentScore").innerHTML = score;
-    console.log(score);
-    bigF();
-    bigW();
-}
 
 function bigF() {
     if (score > goal) {
@@ -93,6 +111,7 @@ function bigW() {
         document.getElementById("currentScore").innerHTML = "Winner!";
     }
 }
+
 
 
 
